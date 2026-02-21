@@ -28,7 +28,14 @@ def update_calendar():
     """Update the calendar display based on the selected year and month."""
     try:
         # Get selected year and month
-        year = int(year_var.get())
+        year_str = year_var.get()
+
+        # Security check: limit input length to prevent DoS from large integer conversion
+        if len(year_str) > 4:
+            messagebox.showerror("Invalid Input", "Year length exceeded.")
+            return
+
+        year = int(year_str)
         month = month_names.index(month_var.get()) + 1
 
         # Year range check
@@ -68,9 +75,18 @@ def get_day():
     """Display the day of the week for a specific date."""
     try:
         # Get selected year, month, and day
-        year = int(year_var.get())
-        month = month_names.index(month_var.get()) + 1
-        day = int(day_entry.get())
+        year_str = year_var.get()
+        month_str = month_var.get()
+        day_str = day_entry.get()
+
+        # Security check: limit input length to prevent DoS from large integer conversion
+        if len(year_str) > 4 or len(day_str) > 2:
+            messagebox.showerror("Invalid Input", "Input length exceeded.")
+            return
+
+        year = int(year_str)
+        month = month_names.index(month_str) + 1
+        day = int(day_str)
 
         if not (2019 <= year <= 2068):
             messagebox.showerror("Out of Range", "Year must be between 2019 and 2068.")
