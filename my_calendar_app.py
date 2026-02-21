@@ -84,89 +84,91 @@ def get_day():
     except ValueError:
         messagebox.showerror("Invalid Input", "Please enter a valid numeric day.")
 
-# ----------------------------
-# GUI Setup
-# ----------------------------
-
-root = tk.Tk()
-root.title("🕰️ 50-Year Digital Perpetual Calendar")
-# Ensure the window is large enough for the content
-root.geometry("650x650") 
-root.config(bg="#fdf6e3")
-
-# Title
-title_label = tk.Label(
-    root,
-    text="🕰️ 50-Year Digital Calendar (2019–2068)",
-    font=("Helvetica", 14, "bold"),
-    bg="#fdf6e3",
-    fg="#2a4d69"
-)
-title_label.pack(pady=10)
-
-# Dropdown Frame
-frame = tk.Frame(root, bg="#fdf6e3")
-frame.pack(pady=10)
-
 month_names = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ]
-# Initialize with current date
-month_var = tk.StringVar(value=datetime.now().strftime("%B"))
-year_var = tk.StringVar(value=str(datetime.now().year))
 
-month_label = tk.Label(frame, text="Month:", font=("Arial", 11), bg="#fdf6e3")
-month_label.grid(row=0, column=0, padx=5)
-month_menu = ttk.Combobox(frame, textvariable=month_var, values=month_names, width=12, state="readonly")
-month_menu.grid(row=0, column=1, padx=5)
+# ----------------------------
+# GUI Setup
+# ----------------------------
 
-year_label = tk.Label(frame, text="Year:", font=("Arial", 11), bg="#fdf6e3")
-year_label.grid(row=0, column=2, padx=5)
-# Generate years from 2019 to 2068 inclusive
-year_menu = ttk.Combobox(frame, textvariable=year_var, values=[str(y) for y in range(2019, 2069)], width=6, state="readonly") 
-year_menu.grid(row=0, column=3, padx=5)
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("🕰️ 50-Year Digital Perpetual Calendar")
+    # Ensure the window is large enough for the content
+    root.geometry("650x650")
+    root.config(bg="#fdf6e3")
 
-update_btn = tk.Button(frame, text="Show Calendar", command=update_calendar, bg="#4CAF50", fg="white", width=15)
-update_btn.grid(row=0, column=4, padx=10)
+    # Title
+    title_label = tk.Label(
+        root,
+        text="🕰️ 50-Year Digital Calendar (2019–2068)",
+        font=("Helvetica", 14, "bold"),
+        bg="#fdf6e3",
+        fg="#2a4d69"
+    )
+    title_label.pack(pady=10)
 
-# Calendar Display Box
-# Increased height for better display of month calendar
-calendar_display = tk.Text(root, height=12, width=60, font=("Courier", 11)) 
-calendar_display.pack(pady=10)
-calendar_display.config(state='disabled', bg="#fff8e7")
+    # Dropdown Frame
+    frame = tk.Frame(root, bg="#fdf6e3")
+    frame.pack(pady=10)
 
-# Leap Year Label
-leap_label = tk.Label(root, text="", font=("Arial", 11, "italic"), bg="#fdf6e3", fg="#2a4d69")
-leap_label.pack(pady=5)
+    # Initialize with current date
+    month_var = tk.StringVar(value=datetime.now().strftime("%B"))
+    year_var = tk.StringVar(value=str(datetime.now().year))
 
-# Day Lookup Section
-lookup_frame = tk.Frame(root, bg="#fdf6e3")
-lookup_frame.pack(pady=15)
+    month_label = tk.Label(frame, text="Month:", font=("Arial", 11), bg="#fdf6e3")
+    month_label.grid(row=0, column=0, padx=5)
+    month_menu = ttk.Combobox(frame, textvariable=month_var, values=month_names, width=12, state="readonly")
+    month_menu.grid(row=0, column=1, padx=5)
 
-day_label = tk.Label(lookup_frame, text="Enter Day:", bg="#fdf6e3", font=("Arial", 11))
-day_label.grid(row=0, column=0, padx=5)
-day_entry = tk.Entry(lookup_frame, width=5)
-day_entry.grid(row=0, column=1, padx=5)
+    year_label = tk.Label(frame, text="Year:", font=("Arial", 11), bg="#fdf6e3")
+    year_label.grid(row=0, column=2, padx=5)
+    # Generate years from 2019 to 2068 inclusive
+    year_menu = ttk.Combobox(frame, textvariable=year_var, values=[str(y) for y in range(2019, 2069)], width=6, state="readonly")
+    year_menu.grid(row=0, column=3, padx=5)
 
-day_btn = tk.Button(lookup_frame, text="Find Day of Week", command=get_day, bg="#2a4d69", fg="white", width=18)
-day_btn.grid(row=0, column=2, padx=10)
+    update_btn = tk.Button(frame, text="Show Calendar", command=update_calendar, bg="#4CAF50", fg="white", width=15)
+    update_btn.grid(row=0, column=4, padx=10)
 
-# Result Label - Increased font size for emphasis
-result_label = tk.Label(root, text="Select a date to find its day of the week.", font=("Arial", 12, "bold"), bg="#fdf6e3", fg="#444") 
-result_label.pack(pady=10)
+    # Calendar Display Box
+    # Increased height for better display of month calendar
+    calendar_display = tk.Text(root, height=12, width=60, font=("Courier", 11))
+    calendar_display.pack(pady=10)
+    calendar_display.config(state='disabled', bg="#fff8e7")
 
-# Footer
-footer = tk.Label(
-    root,
-    text="Designed in Python 🐍 using Tkinter | Accurate 2019–2068",
-    font=("Arial", 9, "italic"),
-    bg="#fdf6e3",
-    fg="#555"
-)
-footer.pack(side="bottom", pady=10)
+    # Leap Year Label
+    leap_label = tk.Label(root, text="", font=("Arial", 11, "italic"), bg="#fdf6e3", fg="#2a4d69")
+    leap_label.pack(pady=5)
 
-# Initial Load - Display the current month/year on startup
-update_calendar()
+    # Day Lookup Section
+    lookup_frame = tk.Frame(root, bg="#fdf6e3")
+    lookup_frame.pack(pady=15)
 
-root.mainloop()
+    day_label = tk.Label(lookup_frame, text="Enter Day:", bg="#fdf6e3", font=("Arial", 11))
+    day_label.grid(row=0, column=0, padx=5)
+    day_entry = tk.Entry(lookup_frame, width=5)
+    day_entry.grid(row=0, column=1, padx=5)
+
+    day_btn = tk.Button(lookup_frame, text="Find Day of Week", command=get_day, bg="#2a4d69", fg="white", width=18)
+    day_btn.grid(row=0, column=2, padx=10)
+
+    # Result Label - Increased font size for emphasis
+    result_label = tk.Label(root, text="Select a date to find its day of the week.", font=("Arial", 12, "bold"), bg="#fdf6e3", fg="#444")
+    result_label.pack(pady=10)
+
+    # Footer
+    footer = tk.Label(
+        root,
+        text="Designed in Python 🐍 using Tkinter | Accurate 2019–2068",
+        font=("Arial", 9, "italic"),
+        bg="#fdf6e3",
+        fg="#555"
+    )
+    footer.pack(side="bottom", pady=10)
+
+    # Initial Load - Display the current month/year on startup
+    update_calendar()
+
+    root.mainloop()
