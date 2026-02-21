@@ -61,7 +61,7 @@ def update_calendar():
         leap_text = "✅ Leap Year" if calendar.isleap(year) else "❌ Not a Leap Year"
         leap_label.config(text=f"{leap_text} — {year}")
 
-    except Exception as e:
+    except (ValueError, tk.TclError) as e:
         messagebox.showerror("Error", f"An error occurred: {str(e)}")
 
 def get_day():
@@ -166,7 +166,7 @@ footer = tk.Label(
 )
 footer.pack(side="bottom", pady=10)
 
-# Initial Load - Display the current month/year on startup
-update_calendar()
-
-root.mainloop()
+if __name__ == "__main__":
+    # Initial Load - Display the current month/year on startup
+    update_calendar()
+    root.mainloop()
