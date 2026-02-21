@@ -29,7 +29,7 @@ def update_calendar():
     try:
         # Get selected year and month
         year = int(year_var.get())
-        month = month_names.index(month_var.get()) + 1
+        month = month_to_index[month_var.get()]
 
         # Year range check
         if not (2019 <= year <= 2068):
@@ -69,7 +69,7 @@ def get_day():
     try:
         # Get selected year, month, and day
         year = int(year_var.get())
-        month = month_names.index(month_var.get()) + 1
+        month = month_to_index[month_var.get()]
         day = int(day_entry.get())
 
         if not (2019 <= year <= 2068):
@@ -112,6 +112,8 @@ month_names = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ]
+month_to_index = {name: i + 1 for i, name in enumerate(month_names)}
+
 # Initialize with current date
 month_var = tk.StringVar(value=datetime.now().strftime("%B"))
 year_var = tk.StringVar(value=str(datetime.now().year))
