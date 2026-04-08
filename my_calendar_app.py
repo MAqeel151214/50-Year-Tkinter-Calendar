@@ -12,6 +12,10 @@ from tkinter import ttk, messagebox
 import calendar
 import logging
 from datetime import datetime
+import logging
+
+# Configure logging to capture unexpected errors
+logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Configure logging to record errors internally
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -76,6 +80,8 @@ def update_calendar():
         messagebox.showerror("Invalid Input", "Please ensure the year and month are valid.")
     except Exception:
         logging.exception("Unexpected error in update_calendar")
+    except Exception:
+        logging.exception("An unexpected error occurred in update_calendar")
         messagebox.showerror("Error", "An unexpected error occurred. Please try again.")
 
 def get_day():
@@ -108,6 +114,7 @@ def get_day():
         messagebox.showerror("Invalid Input", "Please enter a valid numeric day.")
     except Exception:
         logging.exception("Unexpected error in get_day")
+        logging.exception("An unexpected error occurred in get_day")
         messagebox.showerror("Error", "An unexpected error occurred. Please try again.")
 
 month_names = [
