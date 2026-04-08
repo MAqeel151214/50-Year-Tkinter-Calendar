@@ -44,7 +44,7 @@ def update_calendar():
             return
 
         year = int(year_str)
-        month = month_names.index(month_var.get()) + 1
+        month = month_to_index[month_var.get()]
 
         # Year range check
         if not (2019 <= year <= 2068):
@@ -98,7 +98,7 @@ def get_day():
             return
 
         year = int(year_str)
-        month = month_names.index(month_str) + 1
+        month = month_to_index[month_str]
         day = int(day_str)
 
         if not (2019 <= year <= 2068):
@@ -121,6 +121,7 @@ month_names = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ]
+month_to_index = {name: i + 1 for i, name in enumerate(month_names)}
 
 # ----------------------------
 # GUI Setup
