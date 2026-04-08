@@ -11,6 +11,10 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import calendar
 from datetime import datetime
+import logging
+
+# Configure logging to capture unexpected errors
+logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # ----------------------------
 # Helper Functions
@@ -68,8 +72,9 @@ def update_calendar():
         leap_text = "✅ Leap Year" if calendar.isleap(year) else "❌ Not a Leap Year"
         leap_label.config(text=f"{leap_text} — {year}")
 
-    except Exception as e:
-        messagebox.showerror("Error", f"An error occurred: {str(e)}")
+    except Exception:
+        logging.exception("An unexpected error occurred in update_calendar")
+        messagebox.showerror("Error", "An unexpected error occurred. Please try again.")
 
 def get_day():
     """Display the day of the week for a specific date."""
@@ -99,6 +104,9 @@ def get_day():
             messagebox.showerror("Invalid Date", "The entered date is not valid.")
     except ValueError:
         messagebox.showerror("Invalid Input", "Please enter a valid numeric day.")
+    except Exception:
+        logging.exception("An unexpected error occurred in get_day")
+        messagebox.showerror("Error", "An unexpected error occurred. Please try again.")
 
 month_names = [
     "January", "February", "March", "April", "May", "June",
