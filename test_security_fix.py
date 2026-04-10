@@ -6,8 +6,12 @@ import sys
 sys.modules['tkinter'] = MagicMock()
 sys.modules['tkinter.ttk'] = MagicMock()
 sys.modules['tkinter.messagebox'] = MagicMock()
+sys.modules['tkinter'].messagebox = sys.modules['tkinter.messagebox']
 
 import my_calendar_app
+
+# Ensure we're testing with the mock
+my_calendar_app.messagebox.showerror = MagicMock()
 
 class TestSecurityFix(unittest.TestCase):
     def setUp(self):
