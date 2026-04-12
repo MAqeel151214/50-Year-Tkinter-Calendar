@@ -1,0 +1,3 @@
+## 2024-04-12 - Tkinter Web-Like UX Patterns
+**Learning:** Traditional desktop GUI frameworks like Tkinter often default to a highly manual interaction model (e.g., explicitly clicking "Update" after changing a dropdown). By borrowing modern web UX patterns—such as auto-updating state on dropdown changes (`<<ComboboxSelected>>`) and supporting implicit form submission via the Enter key (`<Return>` on `tk.Entry`)—we significantly reduce friction and make the interface feel more responsive and intuitive to users accustomed to modern web apps.
+**Action:** When designing Tkinter interfaces, proactively bind change events to auto-update dependent visual states and ensure keyboard submission (`<Return>`) is bound for text entries.
