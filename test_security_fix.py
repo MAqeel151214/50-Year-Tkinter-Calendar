@@ -12,7 +12,7 @@ import my_calendar_app
 class TestSecurityFix(unittest.TestCase):
     def setUp(self):
         # Reset mocks
-        my_calendar_app.messagebox.showerror.reset_mock()
+        my_calendar_app.messagebox.showerror = MagicMock()
 
         # Manually assign mocked variables that are usually created in if __name__ == "__main__":
         my_calendar_app.year_var = MagicMock()
