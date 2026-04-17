@@ -1,0 +1,3 @@
+## 2026-04-17 - Keyboard Interaction and Auto-Updates in Desktop Apps
+**Learning:** Tkinter desktop applications often lack modern web-like UX patterns, such as automatic updates upon selection and keyboard shortcuts (like pressing Enter to submit). Without these, interactions feel clunky and require unnecessary mouse clicks.
+**Action:** Always bind `<<ComboboxSelected>>` to dropdown menus for auto-updating content and `<Return>` to text entry fields for easier form submission. Ensure target functions accept an optional `event=None` parameter to allow both event-driven and programmatic invocation.
