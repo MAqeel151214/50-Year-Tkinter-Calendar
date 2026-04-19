@@ -1,0 +1,3 @@
+## 2024-04-19 - Modernizing Desktop Input UX
+**Learning:** Native desktop input patterns (like requiring users to click a separate "Update" or "Submit" button after selecting a dropdown value or typing in a field) feel outdated and interrupt user flow compared to modern web apps.
+**Action:** When building or maintaining Tkinter interfaces, bind native desktop input events like `<<ComboboxSelected>>` for dropdowns and `<Return>` for text fields directly to their respective update functions to create a seamless, auto-updating, web-like UX. Ensure target functions are updated to accept an optional `event=None` parameter so they work for both bindings and direct programmatic calls.
