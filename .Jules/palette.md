@@ -1,0 +1,3 @@
+## 2026-04-22 - Tkinter Web-like UX Patterns
+**Learning:** Users increasingly expect traditional desktop applications (like Tkinter) to behave with web-like responsiveness, such as auto-updating on dropdown selection and submitting forms with the Enter key, rather than requiring explicit button clicks for every action.
+**Action:** When building Tkinter forms, bind `<<ComboboxSelected>>` to dropdowns for automatic updates and `<Return>` to text entries to allow keyboard submission. Ensure target functions accept an optional `event=None` parameter to remain compatible with both event-driven and programmatic calls.
