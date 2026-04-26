@@ -1,0 +1,3 @@
+## 2026-04-26 - Auto-updating Tkinter UI elements
+**Learning:** In Tkinter, users shouldn't always have to click a button to see results after selecting an item from a dropdown or typing a query. It interrupts the UX flow. Binding `<<ComboboxSelected>>` to dropdowns and `<Return>` to entry fields creates a much smoother, web-like interaction.
+**Action:** When creating Tkinter interfaces with dropdowns or simple search fields, implement event bindings (`<<ComboboxSelected>>`, `<Return>`) to auto-trigger the relevant actions instead of solely relying on explicit submit buttons. Ensure the target functions accept an `event=None` parameter.
