@@ -1,0 +1,3 @@
+## 2026-04-27 - Auto-update Tkinter GUI elements with Event Bindings
+**Learning:** Modern web-like UX patterns can be implemented in Tkinter using `<<ComboboxSelected>>` to auto-update content on dropdown changes and binding `<Return>` to text entry fields for form submission without needing explicit button clicks. This makes the interface more intuitive and reduces unnecessary interactions.
+**Action:** Always bind `<<ComboboxSelected>>` to dropdowns to refresh dependent views immediately and bind `<Return>` to text entry fields to streamline form submission. Make sure the associated functions accept an optional `event=None` parameter.
