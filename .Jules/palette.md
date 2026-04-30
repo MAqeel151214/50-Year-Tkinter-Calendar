@@ -1,0 +1,3 @@
+## 2023-10-24 - Event Binding for Seamless Interaction
+**Learning:** For a more seamless UX, particularly in utility-heavy tools like calendars, relying exclusively on "update" or "submit" buttons creates unnecessary friction. Users expect dropdowns and input fields to react intuitively to selection changes and the Return key, similar to web standards.
+**Action:** Always bind Tkinter native events (like `<<ComboboxSelected>>` for menus and `<Return>` for text inputs) to update handlers alongside visible buttons, ensuring the handlers optionally accept the event argument (`def handler(event=None):`).
