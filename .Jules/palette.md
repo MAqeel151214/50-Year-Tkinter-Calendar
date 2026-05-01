@@ -1,0 +1,3 @@
+## 2026-05-01 - [Auto-update Dropdowns and Submit on Enter]
+**Learning:** [Tkinter applications can feel dated when users are required to click 'Update' or 'Submit' buttons for every action. Applying modern web-like UX patterns—such as auto-updating state when dropdowns change (via `<<ComboboxSelected>>`) and auto-submitting forms when pressing Enter (via `<Return>`)—significantly improves the perception of fluidity and ease of use in desktop apps.]
+**Action:** [When building Tkinter forms or interactive displays, proactively bind change events to dropdowns and Enter key events to text inputs to eliminate unnecessary button clicks, ensuring functions accept an optional `event=None` parameter to handle both UI events and programmatic calls.]
