@@ -1,0 +1,3 @@
+## 2024-05-03 - Auto-update bindings for Tkinter elements
+**Learning:** Tkinter interfaces can feel clunky if users have to manually click a button to submit inputs, especially for dropdowns and text fields. Binding standard events like `<<ComboboxSelected>>` to dropdowns and `<Return>` to entry fields provides a more modern, responsive, web-like UX.
+**Action:** Next time working on a Tkinter GUI, ensure functions accept an optional `event=None` argument to allow them to be used both as standard function calls and bound event handlers, avoiding the need for lambda functions or duplicate wrappers.
