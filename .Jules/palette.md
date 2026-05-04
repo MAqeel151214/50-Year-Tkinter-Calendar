@@ -1,0 +1,3 @@
+## 2024-05-18 - Tkinter Event Binding for Auto-Updating UI
+**Learning:** In desktop apps (like Tkinter), requiring a button click for common updates (like changing a dropdown or finishing typing in a field) is an outdated UX pattern. Modern web-like UX patterns can be implemented in Tkinter by utilizing event bindings, significantly improving efficiency and making the app feel more responsive and modern.
+**Action:** Use `<<ComboboxSelected>>` for auto-updating content on dropdown changes and `<Return>` for triggering form submissions on text entry fields without requiring explicit button clicks.
