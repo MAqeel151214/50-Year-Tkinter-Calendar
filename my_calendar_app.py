@@ -32,7 +32,7 @@ def find_day_of_week(year, month, day):
     except ValueError:
         return None
 
-def update_calendar():
+def update_calendar(event=None):
     """Update the calendar display based on the selected year and month."""
     try:
         # Get selected year and month
@@ -79,12 +79,10 @@ def update_calendar():
     except ValueError:
         messagebox.showerror("Invalid Input", "Please ensure the year and month are valid.")
     except Exception:
-        logging.exception("Unexpected error in update_calendar")
-    except Exception:
         logging.exception("An unexpected error occurred in update_calendar")
         messagebox.showerror("Error", "An unexpected error occurred. Please try again.")
 
-def get_day():
+def get_day(event=None):
     """Display the day of the week for a specific date."""
     try:
         # Get selected year, month, and day
@@ -113,7 +111,6 @@ def get_day():
     except ValueError:
         messagebox.showerror("Invalid Input", "Please enter a valid numeric day.")
     except Exception:
-        logging.exception("Unexpected error in get_day")
         logging.exception("An unexpected error occurred in get_day")
         messagebox.showerror("Error", "An unexpected error occurred. Please try again.")
 
@@ -154,12 +151,14 @@ if __name__ == "__main__":
     month_label = tk.Label(frame, text="Month:", font=("Arial", 11), bg="#fdf6e3")
     month_label.grid(row=0, column=0, padx=5)
     month_menu = ttk.Combobox(frame, textvariable=month_var, values=month_names, width=12, state="readonly")
+    month_menu.bind("<<ComboboxSelected>>", update_calendar)
     month_menu.grid(row=0, column=1, padx=5)
 
     year_label = tk.Label(frame, text="Year:", font=("Arial", 11), bg="#fdf6e3")
     year_label.grid(row=0, column=2, padx=5)
     # Generate years from 2019 to 2068 inclusive
     year_menu = ttk.Combobox(frame, textvariable=year_var, values=[str(y) for y in range(2019, 2069)], width=6, state="readonly")
+    year_menu.bind("<<ComboboxSelected>>", update_calendar)
     year_menu.grid(row=0, column=3, padx=5)
 
     update_btn = tk.Button(frame, text="Show Calendar", command=update_calendar, bg="#4CAF50", fg="white", width=15)
@@ -182,6 +181,7 @@ if __name__ == "__main__":
     day_label = tk.Label(lookup_frame, text="Enter Day:", bg="#fdf6e3", font=("Arial", 11))
     day_label.grid(row=0, column=0, padx=5)
     day_entry = tk.Entry(lookup_frame, width=5)
+    day_entry.bind("<Return>", get_day)
     day_entry.grid(row=0, column=1, padx=5)
 
     day_btn = tk.Button(lookup_frame, text="Find Day of Week", command=get_day, bg="#2a4d69", fg="white", width=18)
