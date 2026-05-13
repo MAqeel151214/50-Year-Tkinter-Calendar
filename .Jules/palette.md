@@ -1,0 +1,3 @@
+## 2026-05-13 - Bring Web-like UX to Desktop Forms
+**Learning:** Desktop Tkinter applications often feel clunky because users have to manually click update buttons after making selections. Modern users expect web-like interactions where selecting from a dropdown automatically updates the content, and hitting "Enter" in an input field submits the form.
+**Action:** When building or enhancing Tkinter UIs, always bind `<<ComboboxSelected>>` to dropdowns to trigger auto-updates, and bind `<Return>` to text entries for seamless form submissions. Remember to modify the target functions to accept an optional `event=None` argument so they can be triggered both programmatically and via event bindings.
