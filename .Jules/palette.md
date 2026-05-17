@@ -1,0 +1,3 @@
+## 2026-05-17 - Auto-Updating Dropdowns and Keyboard Shortcuts in Tkinter
+**Learning:** Users naturally expect desktop applications to react immediately to dropdown selections without requiring an additional "update" button click, and to submit text inputs using the Return/Enter key. Modern web-like UX patterns reduce friction in basic input forms.
+**Action:** When creating Tkinter interfaces, bind `<<ComboboxSelected>>` to dropdown menus for auto-updating content, and bind `<Return>` to text entry fields for easier form submission. Ensure target functions have an optional `event=None` argument to support both event-driven and programmatic calls.
