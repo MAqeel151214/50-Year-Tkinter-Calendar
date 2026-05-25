@@ -1,0 +1,3 @@
+## 2026-05-25 - Modern Tkinter Event Bindings
+**Learning:** Tkinter interfaces in this application should implement modern web-like UX patterns, such as binding `<<ComboboxSelected>>` to dropdown menus for auto-updating content and binding `<Return>` to text entry fields for easier form submission without requiring button clicks.
+**Action:** When creating new UI components or improving existing ones in Tkinter, always add event bindings that reduce user friction (e.g., auto-updates on selection, Enter to submit) alongside the visible buttons. Remember to add `event=None` to the corresponding callback signatures.
