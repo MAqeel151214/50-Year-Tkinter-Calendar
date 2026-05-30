@@ -1,0 +1,3 @@
+## 2026-05-30 - Keyboard Interaction in Tkinter
+**Learning:** Users naturally expect dropdown menus to immediately apply changes without clicking a separate "Update" button, and expect text inputs to submit on `<Enter>`. Missing these simple keyboard interactions makes the UI feel clunky and inaccessible, especially for keyboard-only users.
+**Action:** Always bind `<<ComboboxSelected>>` to auto-update events for dropdowns, and `<Return>` for primary action entries. Remember to add `event=None` to the corresponding callback signatures so they work seamlessly with both UI bindings and direct function calls.
