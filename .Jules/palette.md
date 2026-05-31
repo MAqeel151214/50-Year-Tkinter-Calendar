@@ -1,0 +1,3 @@
+## 2024-05-14 - Auto-submit via UI Event Bindings
+**Learning:** Users often find it tedious to click a separate "Update" or "Submit" button after making a selection from a dropdown or entering text. Explicitly clicking a button after making an obvious choice breaks the interaction flow and slows down the process.
+**Action:** Automatically trigger updates/submissions when users perform primary actions like selecting a value from a Combobox (`<<ComboboxSelected>>`) or pressing the Return key in a text entry field (`<Return>`). Ensure target functions accept an optional `event=None` parameter so they can handle both the event callbacks and programmatic calls.
