@@ -1,0 +1,3 @@
+## 2026-06-01 - Event Binding in Tkinter
+**Learning:** Adding web-like event bindings (like auto-updating on dropdown selection or submitting on Enter key) significantly improves the modern feel of Tkinter applications.
+**Action:** When implementing Tkinter interfaces, use `bind("<<ComboboxSelected>>", callback)` for auto-updating content and `bind("<Return>", callback)` for text entry submission to improve UX without requiring explicit button clicks.
