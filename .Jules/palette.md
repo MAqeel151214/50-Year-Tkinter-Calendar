@@ -1,0 +1,3 @@
+## 2026-06-03 - Auto-Update and Enter Submission in Tkinter
+**Learning:** Users often expect forms to either update immediately on change or allow submission by pressing 'Enter'. In Tkinter, Comboboxes don't automatically trigger their parent functions, and Entries require explicit Return binding.
+**Action:** When creating Tkinter interfaces with `ttk.Combobox` and `tk.Entry`, bind `<<ComboboxSelected>>` to auto-updating functions and `<Return>` to submission functions. Remember to modify the target functions to accept an optional `event=None` parameter so they can handle both manual button clicks and event-driven triggers gracefully.
