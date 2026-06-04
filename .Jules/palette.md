@@ -1,0 +1,3 @@
+## 2024-06-04 - Adding Keyboard Shortcuts and Auto-updating Comboboxes
+**Learning:** Tkinter interfaces in this application should implement modern web-like UX patterns, such as binding `<<ComboboxSelected>>` to dropdown menus for auto-updating content and binding `<Return>` to text entry fields for easier form submission without requiring button clicks.
+**Action:** When working on Tkinter forms in this app, ensure `<Return>` event bindings are present for inputs that trigger an action, and `<<ComboboxSelected>>` for drop-downs that should automatically trigger an action, and modify the target function signatures to accept an optional `event=None` argument.
