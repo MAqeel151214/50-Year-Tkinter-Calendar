@@ -1,0 +1,3 @@
+## 2024-05-18 - Binding Tkinter events to avoid unnecessary clicks
+**Learning:** For a more seamless user experience in desktop apps (and web-like expectations), users expect dropdown selections and "Enter" key presses to automatically trigger updates. Having to explicitly click "Show Calendar" or "Find Day" after making a selection feels clunky.
+**Action:** When creating Tkinter interfaces with auto-updating needs, bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to entry fields to trigger their respective update functions automatically. Ensure the target functions accept an optional `event=None` argument to be called both via event bindings and programmatically.
