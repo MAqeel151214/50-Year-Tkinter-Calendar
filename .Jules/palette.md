@@ -1,0 +1,3 @@
+## 2026-06-08 - Auto-updating Fields in Tkinter
+**Learning:** Modern web-like UX patterns can be implemented in Tkinter by binding events to form fields. For instance, requiring users to click a "Show Calendar" button after selecting a month or year from a dropdown is friction. Automatically updating the calendar when a dropdown value changes creates a smoother experience.
+**Action:** Always consider binding `<<ComboboxSelected>>` to dropdowns and `<Return>` to text entry fields in Tkinter to reduce required user clicks, but ensure the target functions are updated to accept the optional `event` argument.
