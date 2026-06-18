@@ -1,0 +1,3 @@
+## 2026-06-18 - Binding Tkinter Events for Web-like UX
+**Learning:** Tkinter interfaces feel clunky because users expect modern web-like UX patterns, such as auto-updating content on dropdown selection and form submission via the Return key, instead of being forced to explicitly click action buttons.
+**Action:** Consistently bind `<<ComboboxSelected>>` to auto-update functions for Comboboxes and `<Return>` to submit functions for Entry fields. Ensure target functions accept an optional `event=None` argument to support both event-driven and programmatic invocation.
