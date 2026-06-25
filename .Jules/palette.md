@@ -1,0 +1,3 @@
+## 2026-06-25 - Auto-Updating Forms via Event Binding
+**Learning:** Desktop applications often feel clunky compared to modern web apps because they require explicit button clicks for every action. Users expect immediate visual feedback when changing selections, and expect to be able to hit "Enter" to submit simple inputs.
+**Action:** Always bind `<<ComboboxSelected>>` to auto-update UI components when dropdowns change, and bind `<Return>` to entry fields for quick form submission. Ensure handler functions accept an optional `event=None` argument to support both event-driven and programmatic invocation.
