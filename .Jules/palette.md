@@ -1,0 +1,3 @@
+## 2024-06-27 - Event Binding for Web-Like Flow
+**Learning:** Tkinter desktop applications can feel dated if they require explicit button clicks for all interactions. We learned that applying web-like UX patterns (such as auto-updating content on selection and form submission on Enter) significantly improves user flow and interaction speed without large visual changes.
+**Action:** Always bind `<<ComboboxSelected>>` to dropdowns for automatic updates and `<Return>` to text fields for rapid form submission. Modify target function signatures to accept `event=None` to allow both event-driven and programmatic execution.
