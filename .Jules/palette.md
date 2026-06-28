@@ -1,0 +1,3 @@
+## 2026-06-28 - Auto-update and Return key submission
+**Learning:** Desktop interfaces using Tkinter feel sluggish if users must manually click buttons for every dropdown change or text input submission, whereas web users expect auto-updating and `<Return>` key submissions.
+**Action:** Always bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to entry fields while ensuring the handler accepts an optional `event=None` argument for compatibility.
