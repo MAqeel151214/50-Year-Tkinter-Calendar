@@ -1,0 +1,3 @@
+## 2026-07-03 - [Auto-update and Return bindings for Tkinter forms]
+**Learning:** Tkinter forms that rely on explicit button clicks for common actions (like updating after a dropdown selection or submitting an entry field) disrupt user flow. Binding `<<ComboboxSelected>>` to dropdowns and `<Return>` to text entries provides a more modern, web-like UX and significantly improves keyboard accessibility and speed.
+**Action:** Always bind `<<ComboboxSelected>>` to auto-update when the selection changes in Tkinter dropdowns, and bind `<Return>` to trigger the primary action for Tkinter entry widgets. Ensure the callback functions accept an optional `event=None` argument so they can be triggered both by events and programmatically.
