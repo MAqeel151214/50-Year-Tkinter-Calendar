@@ -1,0 +1,3 @@
+## 2024-06-25 - Auto-updating forms in Tkinter
+**Learning:** Desktop users expect modern web-like auto-updates (like dropdown selections immediately refreshing the view or pressing Enter to submit) instead of being forced to click "Submit" or "Show" buttons.
+**Action:** Bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to text fields to reduce unnecessary clicks. Ensure event handlers accept an optional `event=None` argument to maintain compatibility with programmatic calls.
