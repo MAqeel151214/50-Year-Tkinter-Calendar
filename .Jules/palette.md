@@ -1,0 +1,3 @@
+## 2024-05-23 - Auto-update calendar and enter-to-submit
+**Learning:** Tkinter interfaces can feel archaic compared to modern web apps because they often rely on explicit button clicks for updates.
+**Action:** Bind `<<ComboboxSelected>>` to dropdown menus for auto-updating content and bind `<Return>` to text entry fields for easier form submission, ensuring event handlers accept an optional `event=None` argument.
