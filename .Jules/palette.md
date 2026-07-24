@@ -1,0 +1,3 @@
+## 2024-05-18 - Auto-update calendar and enter-to-submit
+**Learning:** Users expect web-like interactions in desktop apps, such as auto-updating results on dropdown changes and submitting forms with the Enter key.
+**Action:** Always bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to text inputs for immediate feedback and keyboard accessibility, modifying event handlers to accept `event=None`.
