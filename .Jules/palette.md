@@ -1,0 +1,3 @@
+## 2026-08-03 - Web-like Interactions in Desktop Apps
+**Learning:** Reusable UX pattern for this design system: Tkinter interfaces benefit significantly from web-like interaction patterns, such as binding Combobox selection and Enter key events, because users expect auto-updating content and keyboard-friendly form submission without needing to click buttons manually.
+**Action:** Bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to text fields, modifying handler signatures to accept an optional `event=None` argument to support both event-driven and programmatic invocation.
