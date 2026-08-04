@@ -1,0 +1,3 @@
+## 2024-05-24 - Auto-updating and Keyboard Navigation
+**Learning:** Desktop users expect modern web-like behaviors in traditional GUI apps, such as auto-submitting forms on Enter or auto-refreshing content when dropdowns change, instead of relying solely on explicit action buttons.
+**Action:** Bind `<<ComboboxSelected>>` for instant feedback on dropdowns and `<Return>` for text entries to reduce required clicks and improve keyboard accessibility.
