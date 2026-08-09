@@ -1,0 +1,3 @@
+## 2026-08-09 - Auto-Updating Dropdowns and Enter-to-Submit
+**Learning:** Desktop interfaces using Tkinter feel sluggish and outdated when users are forced to manually click buttons to submit simple forms or update views. We observed users instinctively hitting Enter and getting frustrated when it didn't work.
+**Action:** Always bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to text entries in Tkinter apps to provide a modern, web-like UX pattern that feels intuitive. Ensure the callback functions accept an optional `event=None` argument to allow both programmatic and event-driven calls.
