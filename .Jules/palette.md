@@ -1,0 +1,3 @@
+## 2024-05-24 - Auto-Updating Forms in Tkinter
+**Learning:** Users expect Tkinter desktop apps to have web-like auto-updating UI elements, such as dropdown menus immediately updating content without requiring explicit button clicks and enter keys submitting forms.
+**Action:** Bind `<<ComboboxSelected>>` to comboboxes and `<Return>` to entry fields, ensuring callback functions accept an optional `event=None` argument to maintain compatibility with programmatic calls.
