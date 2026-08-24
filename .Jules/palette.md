@@ -1,0 +1,3 @@
+## 2024-05-24 - Auto-Update for Calendar and Lookup Inputs
+**Learning:** Users naturally expect a calendar to update when changing the month/year from a dropdown, without needing to explicitly click a "Show Calendar" button. Similarly, they expect to hit Enter in an input field to submit a form, rather than having to click a "Find" button. These are common patterns in modern web interfaces, but often missed in desktop GUI applications like Tkinter.
+**Action:** Bind `<<ComboboxSelected>>` to dropdown menus for auto-updating content, and bind `<Return>` to text entry fields to improve interaction flow and reduce unnecessary clicks.
