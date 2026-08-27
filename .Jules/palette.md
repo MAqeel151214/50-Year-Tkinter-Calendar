@@ -1,0 +1,3 @@
+## 2024-05-24 - Web-like interactions in Tkinter
+**Learning:** Tkinter forms feel static and require manual button clicks for submission, which violates modern web-like UX expectations where dropdowns auto-update and Enter submits forms.
+**Action:** Bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to text fields to create seamless, auto-updating interactions without requiring explicit button clicks.
