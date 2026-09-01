@@ -1,0 +1,3 @@
+## 2026-09-01 - Interactive Tkinter Event Bindings
+**Learning:** Desktop interfaces often lack the interactive immediacy of web applications. Binding `<<ComboboxSelected>>` to dropdowns and `<Return>` to inputs makes Tkinter applications feel more responsive by eliminating unnecessary button clicks.
+**Action:** When building Tkinter forms or dropdowns, bind immediate change events and enter keys to their respective submit functions, ensuring the target functions accept an optional `event=None` parameter.
