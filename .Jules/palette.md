@@ -1,0 +1,3 @@
+## 2026-09-17 - Auto-updating forms and Enter key submission
+**Learning:** Users in desktop Tkinter applications expect web-like interactions, such as comboboxes updating content immediately without requiring an explicit button click, and text fields supporting submission via the Enter key.
+**Action:** Bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to entry fields, ensuring target functions have `event=None` in their signature.
