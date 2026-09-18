@@ -1,0 +1,3 @@
+## 2026-09-18 - Binding Tkinter events for auto-updating content and form submission
+**Learning:** Tkinter interfaces should implement modern web-like UX patterns, such as binding `<<ComboboxSelected>>` to dropdown menus for auto-updating content and binding `<Return>` to text entry fields for easier form submission without requiring button clicks.
+**Action:** Bind `<<ComboboxSelected>>` to `month_menu` and `year_menu` to call `update_calendar`, and bind `<Return>` to `day_entry` to call `get_day`. Modify the function signatures to accept an optional `event=None` argument so they can be invoked both by the Tkinter event loop and programmatically.
