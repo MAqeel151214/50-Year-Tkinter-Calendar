@@ -1,0 +1,3 @@
+## 2024-05-24 - Auto-submission UI pattern
+**Learning:** Tkinter interfaces can feel archaic because they often rely on explicit submit buttons. Binding `<<ComboboxSelected>>` to dropdowns and `<Return>` to text entries enables modern web-like auto-submission. Function signatures must include `event=None` to handle both direct and event-driven calls.
+**Action:** Always implement auto-submission bindings for form fields in desktop applications to provide immediate feedback and reduce required user interactions.
