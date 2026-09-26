@@ -1,0 +1,3 @@
+## 2024-09-26 - Auto-submission pattern for Tkinter
+**Learning:** Tkinter interfaces in this application should implement modern web-like auto-submission patterns by binding events to instantly update the UI without explicit submit buttons. Function signatures need `event=None` to support both button and event triggers.
+**Action:** Consistently bind `<<ComboboxSelected>>` to dropdowns and `<Return>` to text entries, and update target function signatures to accept `event=None`.
